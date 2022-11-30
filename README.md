@@ -11,9 +11,9 @@ Para realização deste projeto, foram análisados 6 tipos de padrões de projet
     - Composite;
     - Adapter.
 
-    - Padrões Comportamentais:
-      - Iterator;
-      - Observer.
+  - Padrões Comportamentais:
+    - Iterator;
+    - Observer.
 
 # Integrantes:
   - GABRIEL DE AZEVEDO CAMARGO - SP3086429
