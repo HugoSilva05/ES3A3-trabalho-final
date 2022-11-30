@@ -3,12 +3,17 @@ Repositório destinado a armazenar os arquivos referentes ao trabalho final de E
 
 # Descrição do projeto
 Para realização deste projeto, foram análisados 6 tipos de padrões de projeto do GoF, sendo eles:
-  - Singleton (padrão de criação);
-  - Builder (padrão de criação);
-  - Composite (padrão estrutural);
-  - Adapter (padrão estrutural);
-  - Iterator (padrão comportamental);
-  - Observer (padrão comportamental).
+  - Padrões de Criação:
+    - Singleton;
+    - Builder.
+    
+  - Padrões Estruturais:
+    - Composite;
+    - Adapter.
+
+    - Padrões Comportamentais:
+      - Iterator;
+      - Observer.
 
 # Integrantes:
   - GABRIEL DE AZEVEDO CAMARGO - SP3086429
