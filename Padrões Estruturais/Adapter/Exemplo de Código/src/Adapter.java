@@ -1,57 +1,57 @@
-// Java implementation of Adapter pattern
+//Implementação Java do Padrão Adapter
 
-interface Bird
+interface Passaro
 {
-	// birds implement Bird interface that allows
-	// them to fly and make sounds adaptee interface
-	public void fly();
-	public void makeSound();
+	// passaros implementam a interface Passaro, 
+	// que os permite voar e cantar
+	public void voar();
+	public void cantar();
 }
 
-class Sparrow implements Bird
+class Pardal implements Passaro
 {
-	// a concrete implementation of bird
-	public void fly()
+	// uma implementação de passaro
+	public void voar()
 	{
-		System.out.println("Flying");
+		System.out.println("Voando");
 	}
-	public void makeSound()
+	public void cantar()
 	{
-		System.out.println("Chirp Chirp");
-	}
-}
-
-interface ToyDuck
-{
-	// target interface
-	// toyducks dont fly they just make
-	// squeaking sound
-	public void squeak();
-}
-
-class PlasticToyDuck implements ToyDuck
-{
-	public void squeak()
-	{
-		System.out.println("Squeak");
+		System.out.println("Piu Piu");
 	}
 }
 
-class BirdAdapter implements ToyDuck
+interface PatinhoDeBrinquedo
 {
-	// You need to implement the interface your
-	// client expects to use.
-	Bird bird;
-	public BirdAdapter(Bird bird)
+	// interface alvo, 
+	// passaros de brinquedo não voam, 
+	// apenas chiam
+	public void chiar();
+}
+
+class PatinhoDeBrinquedoDePlastico implements PatinhoDeBrinquedo
+{
+	public void chiar()
 	{
-		// we need reference to the object we
-		// are adapting
-		this.bird = bird;
+		System.out.println("Quen quen");
+	}
+}
+
+class PassaroAdapter implements PatinhoDeBrinquedo
+{
+	// você precisa implementar a interface que
+	// o cliente espera usar.
+	Passaro passaro;
+	public PassaroAdapter(Passaro passaro)
+	{
+		// precisamos referenciar o objeto que
+		// estamos adaptando
+		this.passaro = passaro;
 	}
 
-	public void squeak()
+	public void chiar()
 	{
-		// translate the methods appropriately
-		bird.makeSound();
+		// traduzir os metodos apropriadamente
+		passaro.cantar();
 	}
 }
