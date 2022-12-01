@@ -2,22 +2,22 @@ public class Main
 {
 	public static void main(String args[])
 	{
-		Sparrow sparrow = new Sparrow();
-		ToyDuck toyDuck = new PlasticToyDuck();
+		Pardal pardal = new Pardal();
+		PatinhoDeBrinquedo patinhoDeBrinquedo = new PatinhoDeBrinquedoDePlastico();
 
-		// Wrap a bird in a birdAdapter so that it
-		// behaves like toy duck
-		ToyDuck birdAdapter = new BirdAdapter(sparrow);
+		// Envolva um passaro em um passaroAdapter paraque
+		// se comporte como um patinho de brinquedo
+		PatinhoDeBrinquedo passaroAdapter = new PassaroAdapter(pardal);
 
-		System.out.println("Sparrow...");
-		sparrow.fly();
-		sparrow.makeSound();
+		System.out.println("Pardal...");
+		pardal.voar();
+		pardal.cantar();
 
-		System.out.println("ToyDuck...");
-		toyDuck.squeak();
+		System.out.println("PatinhoDeBrinquedo...");
+		patinhoDeBrinquedo.chiar();
 
-		// toy duck behaving like a bird
-		System.out.println("BirdAdapter...");
-		birdAdapter.squeak();
+		// patinho de brinquedo se comportando como um pássaro
+		System.out.println("PassaroAdapter...");
+		passaroAdapter.chiar();
 	}
 }
