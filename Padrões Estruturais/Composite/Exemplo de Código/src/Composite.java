@@ -1,85 +1,85 @@
-// A Java program to demonstrate working of
-// Composite Design Pattern with example
-// of a company with different
-// employee details
+//Um programa Java para demonstrar o funcionamento do
+//padrão Composite usando o exemplo
+//de uma empresa com diferentes
+//dados de funcionários
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-// A common interface for all employee
-interface Employee
+//Uma interface comum para todos os funcionários
+interface Funcionario
 {
-	public void showEmployeeDetails();
+	public void mostrarDetalhesDoFuncionario();
 }
 
-class Developer implements Employee
+class Desenvolvedor implements Funcionario
 {
-	private String name;
-	private long empId;
-	private String position;
+	private String nome;
+	private long funId;
+	private String cargo;
 	
-	public Developer(long empId, String name, String position)
+	public Desenvolvedor(long funId, String nome, String cargo)
 	{
-		// Assign the Employee id,
-		// name and the position
-		this.empId = empId;
-		this.name = name;
-		this.position = position;
-	}
-	
-	@Override
-	public void showEmployeeDetails()
-	{
-		System.out.println(empId+" " +name+ " " + position );
-	}
-}
-
-class Manager implements Employee
-{
-	private String name;
-	private long empId;
-	private String position;
-
-	public Manager(long empId, String name, String position)
-	{
-		this.empId = empId;
-		this.name = name;
-		this.position = position;
+		// Atribua o ID do funcionário,
+		// nome e a cargo
+		this.funId = funId;
+		this.nome = nome;
+		this.cargo = cargo;
 	}
 	
 	@Override
-	public void showEmployeeDetails()
+	public void mostrarDetalhesDoFuncionario()
 	{
-		System.out.println(empId+" " +name+ " " + position );
+		System.out.println(funId+" " +nome+ " " + cargo );
+	}
+}
+
+class Gerente implements Funcionario
+{
+	private String nome;
+	private long funId;
+	private String cargo;
+
+	public Gerente(long funId, String nome, String cargo)
+	{
+		this.funId = funId;
+		this.nome = nome;
+		this.cargo = cargo;
+	}
+	
+	@Override
+	public void mostrarDetalhesDoFuncionario()
+	{
+		System.out.println(funId+" " +nome+ " " + cargo );
 	}
 }
 
 
-// Class used to get Employee List
-// and do the opertions like
-// add or remove Employee
+//Classe usada para obter a lista de funcionários
+//e fazer operações como
+//adicionar ou remover Funcionários
 
-class CompanyDirectory implements Employee
+class Diretor implements Funcionario
 {
-	private List<Employee> employeeList = new ArrayList<Employee>();
+	private List<Funcionario> listaDeFuncionarios = new ArrayList<Funcionario>();
 		
 	@Override
-	public void showEmployeeDetails()
+	public void mostrarDetalhesDoFuncionario()
 	{
-		for(Employee emp:employeeList)
+		for(Funcionario fun:listaDeFuncionarios)
 		{
-			emp.showEmployeeDetails();
+			fun.mostrarDetalhesDoFuncionario();
 		}
 	}
 		
-	public void addEmployee(Employee emp)
+	public void adicionaFuncionario(Funcionario fun)
 	{
-		employeeList.add(emp);
+		listaDeFuncionarios.add(fun);
 	}
 		
-	public void removeEmployee(Employee emp)
+	public void removeFuncionario(Funcionario fun)
 	{
-		employeeList.remove(emp);
+		listaDeFuncionarios.remove(fun);
 	}
 }
